@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .section-1 {
+            background-color: #54657e;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .section-1 h1 {
+            background-color: #63234f;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .element1 { background-color: #d876e6; }
+        .element2 { background-color: #5c51c7; }
+        .element3 { background-color: #d49139; }
+        .element4 { background-color: #919655; }
+        .element5 { background-color: #72af69; }
+
+        .container-fluid{
+            width: 100vw;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      
+        }
+        .progress-box{
+            width: 80%;
+            height: 350px;
+            background-color: #54657e;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .progress{
+            width: 60%;
+            height: 15px;
+            background-color: #bdbaba;
+            border-radius: 20px;
+        }
+        .progress-bar-HTML{
+            width: 2%;
+            height: 15px;
+            background-color: #15a0fd;
+            border-radius: 20px;
+            position: relative;
+            transition: all 2s ease;
+        }
+        .progress-bar-CSS{
+            width: 2%;
+            height: 15px;
+            background-color: #15fd7d;
+            border-radius: 20px;
+            position: relative;
+            transition: all 2s ease;
+        }
+        .progress-bar-JAVASCRIPT{
+            width: 2%;
+            height: 15px;
+            background-color: #cf4c17;
+            border-radius: 20px;
+            position: relative;
+            transition: all 2s ease;
+        }
+        /* .progress-bar .span1{
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            top: 0;
+            right: 0px;
+            border-radius: 10px;
+            background-color: #fd3015;
+        } */
+    </style>
+</head>
+<body>
+    <section>
+        <!-- Section 1 -->
+    <div class="section-1 container-fluid text-center">
+        <h1 class="reveal">Scroll Reveal</h1>
+        <div class="row justify-content-center gap-3">
+            <div class="col-6 col-md-2 card element1 reveal">Lorem ipsum dolor sit amet.</div>
+            <div class="col-6 col-md-2 card element2 reveal">Lorem ipsum dolor sit amet.</div>
+            <div class="col-6 col-md-2 card element3 reveal">Lorem ipsum dolor sit amet.</div>
+            <div class="col-6 col-md-2 card element4 reveal">Lorem ipsum dolor sit amet.</div>
+            <div class="col-6 col-md-2 card element5 reveal">Lorem ipsum dolor sit amet.</div>
+        </div>
+    </div>
+
+    </section>
+
+    <div class="2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, nesciunt ad. Illo laborum ex nam quidem quod delectus vitae dicta, at voluptatibus cumque atque, distinctio modi in, ut perspiciatis a ab culpa incidunt! Blanditiis repudiandae dolores aspernatur aliquam est accusamus. Optio eveniet facilis deleniti, quo praesentium quasi eos. Impedit consectetur tenetur dicta fugiat officia sit aliquam eum inventore voluptatem, quidem veniam laborum ex, placeat eius doloribus atque illum similique! Aperiam sunt soluta voluptas sit odit reprehenderit neque error earum. Nobis accusamus autem quidem perspiciatis quasi modi nesciunt, eius in odit facere, est neque quis, nisi quia laborum iste laboriosam sit assumenda provident accusantium eum vero dolore! Veniam, ad repellat optio incidunt dolore, hic modi animi odit, est dicta reprehenderit distinctio tempora corporis nostrum vel assumenda id. Sint praesentium, inventore beatae exercitationem maxime voluptatum ullam. Fugit, harum. Iusto illo odit animi perferendis cum rem quia dicta est hic veniam. Hic, nesciunt.
+    </div>
+    
+    <section>
+            <!-- Section 2 -->
+    <div class="container-fluid bg-info py-5">
+
+        <div class="progress-box">
+            <p> HTML  40%</p> 
+            <div class="progress">
+                <div class="progress-bar-HTML">
+                   <!-- <div class="span1"></div> -->
+                </div>
+            </div>
+            <p> CSS  60%</p> 
+            <div class="progress">
+                <div class="progress-bar-CSS">
+                   <!-- <div class="span2"></div> -->
+                </div>
+            </div>
+            <p> JAVASCRIPT  90%</p> 
+            <div class="progress">
+                <div class="progress-bar-JAVASCRIPT">
+                   <!-- <div class="span3"></div> -->
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    </section>
+
+    <script>
+        const ProgressHTML = document.querySelector(".progress-bar-HTML");
+        const progressCSS = document.querySelector(".progress-bar-CSS");
+        const progressJAVASCRIPT = document.querySelector(".progress-bar-JAVASCRIPT");
+        const progressBox = document.querySelector(".progress-box");
+    
+        // Function to check if the element is in view
+        function isInView() {
+            const boxTop = progressBox.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+    
+            // If the top of the box is within the viewport
+            if (boxTop < screenHeight && boxTop >= 0) {
+                ProgressHTML.style.width = "40%";
+                progressCSS.style.width = "60%";
+                progressJAVASCRIPT.style.width = "90%";
+            }
+        }
+    
+        // Listen for scroll events
+        window.addEventListener("scroll", isInView);
+    
+        // Also check if the element is already in view when the page loads
+        window.addEventListener("load", isInView);
+    </script>
+    
+    
+    
+</body>
+</html>
